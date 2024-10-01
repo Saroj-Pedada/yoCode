@@ -43,4 +43,4 @@ def scan_code(image_path):
 
 # Example usage to scan the generated image
 decoded_text = scan_code('custom_code.png')
-print(f"Decoded text: {decoded_text}")
+print(f"Deciphered text: {decoded_text}")

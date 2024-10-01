@@ -1,3 +1,4 @@
+import sys
 from PIL import Image
 
 # Define your color map for 3-bit sequences
@@ -18,7 +19,7 @@ def text_to_binary(text):
     return binary
 
 # Generate the custom code image
-def generate_code(data, image_path='custom_code.png'):
+def generate_code(data: str, image_path='custom_code.png'):
     # Convert text to binary
     binary_data = text_to_binary(data)
     # Group binary data into 3-bit chunks
@@ -38,7 +39,10 @@ def generate_code(data, image_path='custom_code.png'):
 
     # Save the image
     img.save(image_path)
-    print(f"Custom code saved as {image_path}")
+    print(f"Custom code at ./{image_path}")
 
 # Example usage
-generate_code("hello world")
+if(len(sys.argv) == 1):
+    generate_code("Hello, World!")
+else:
+    generate_code(sys.argv[1])
